@@ -1,0 +1,2310 @@
+/* =========================================
+   SEBASTIAN LUNDBERG
+   PORTFOLIO
+========================================= */
+
+
+/* =========================================
+   COLORS
+========================================= */
+
+:root {
+
+    --paper: #e9dfcf;
+
+    --paper-light: #f1e9dd;
+
+    --paper-dark: #ddd0bd;
+
+    --black: #181816;
+
+    --soft-black: #302e2a;
+
+    --red: #74272e;
+
+    --dark-red: #582027;
+
+    --white: #f5eee4;
+
+    --padding: clamp(25px, 5vw, 85px);
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--paper);
+
+    color: var(--black);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* PAPER TEXTURE */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    opacity: .18;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255,255,255,.7),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(70,50,30,.15),
+            transparent 30%
+        ),
+
+        repeating-linear-gradient(
+            12deg,
+            transparent 0,
+            transparent 8px,
+            rgba(20,20,20,.025) 9px,
+            transparent 10px
+        );
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+svg {
+    display: block;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    height: 90px;
+
+    padding:
+        0
+        var(--padding);
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(0,0,0,.1);
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    width: max-content;
+
+}
+
+
+.logo-text {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 38px;
+
+    letter-spacing: -3px;
+
+}
+
+
+.logo-symbol {
+
+    width: 53px;
+
+    height: 43px;
+
+    margin-left: 6px;
+
+    overflow: visible;
+
+}
+
+
+.logo-circle {
+
+    fill: none;
+
+    stroke: var(--black);
+
+    stroke-width: 6;
+
+    stroke-linecap: round;
+
+}
+
+
+.logo-triangle {
+    fill: var(--black);
+}
+
+
+.logo-slash {
+
+    fill: none;
+
+    stroke: var(--red);
+
+    stroke-width: 8;
+
+    stroke-linecap: round;
+
+}
+
+
+/* NAV */
+
+.nav {
+
+    display: flex;
+
+    gap:
+        clamp(
+            25px,
+            4vw,
+            60px
+        );
+
+}
+
+
+.nav a {
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* HEADER BUTTON */
+
+.top-button {
+
+    justify-self: end;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    padding:
+        15px
+        22px;
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.top-button span {
+    margin-left: 20px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    min-height:
+        calc(
+            100vh - 90px
+        );
+
+    padding:
+        70px
+        var(--padding)
+        80px;
+
+    display: grid;
+
+    grid-template-columns:
+        .9fr
+        1.1fr;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+/* TEXT */
+
+.hero-text {
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+.small-title,
+.number {
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2.3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.small-title {
+
+    margin-bottom: 40px;
+
+}
+
+
+.small-title::after,
+.number::after {
+
+    content: "";
+
+    display: block;
+
+    width: 60px;
+
+    height: 1px;
+
+    background: var(--black);
+
+    margin-top: 12px;
+
+    opacity: .5;
+
+}
+
+
+.hero h1 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            70px,
+            7.4vw,
+            130px
+        );
+
+    font-weight: normal;
+
+    letter-spacing: -.065em;
+
+    line-height: .83;
+
+}
+
+
+.hero h1 em {
+
+    color: var(--red);
+
+    font-weight: normal;
+
+}
+
+
+.intro {
+
+    max-width: 440px;
+
+    margin-top: 45px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.hero-buttons {
+
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.main-button {
+
+    background: var(--black);
+
+    color: var(--white);
+
+    padding:
+        17px
+        24px;
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.main-button span {
+
+    margin-left: 25px;
+
+}
+
+
+.simple-link {
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-bottom:
+        1px solid
+        var(--black);
+
+    padding-bottom: 5px;
+
+}
+
+
+/* =========================================
+   HERO ART
+========================================= */
+
+.hero-art {
+
+    position: relative;
+
+    height:
+        min(
+            720px,
+            75vh
+        );
+
+    min-height: 560px;
+
+}
+
+
+/* BACKGROUND SKETCH */
+
+.hero-lines {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    fill: none;
+
+    stroke:
+        rgba(
+            24,
+            24,
+            22,
+            .25
+        );
+
+    stroke-width: 1;
+
+}
+
+
+/* RED C */
+
+.hero-c {
+
+    position: absolute;
+
+    width: 60%;
+
+    left: 1%;
+
+    top: 3%;
+
+    overflow: visible;
+
+    transform:
+        rotate(-5deg);
+
+}
+
+
+.paint-c {
+
+    fill: none;
+
+    stroke-linecap: round;
+
+}
+
+
+.paint-c-main {
+
+    stroke: var(--red);
+
+    stroke-width: 45;
+
+}
+
+
+.paint-c-extra {
+
+    stroke:
+        rgba(
+            116,
+            39,
+            46,
+            .55
+        );
+
+    stroke-width: 10;
+
+}
+
+
+.paint-c-scratch {
+
+    stroke: var(--dark-red);
+
+    stroke-width: 2;
+
+    opacity: .5;
+
+}
+
+
+/* BLACK TRIANGLE */
+
+.hero-triangle {
+
+    position: absolute;
+
+    width: 45%;
+
+    left: 28%;
+
+    top: 27%;
+
+    transform:
+        rotate(2deg);
+
+}
+
+
+.triangle-main {
+
+    fill: var(--black);
+
+}
+
+
+.triangle-line {
+
+    fill: none;
+
+    stroke:
+        rgba(
+            233,
+            223,
+            207,
+            .25
+        );
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+}
+
+
+.triangle-line.thin {
+    stroke-width: 1;
+}
+
+
+/* RED SLASH */
+
+.hero-slash {
+
+    position: absolute;
+
+    width: 27%;
+
+    height: 85%;
+
+    right: 2%;
+
+    top: 5%;
+
+    overflow: visible;
+
+}
+
+
+.slash-main {
+
+    fill: none;
+
+    stroke: var(--red);
+
+    stroke-width: 40;
+
+    stroke-linecap: round;
+
+}
+
+
+.slash-extra {
+
+    fill: none;
+
+    stroke:
+        rgba(
+            116,
+            39,
+            46,
+            .45
+        );
+
+    stroke-width: 8;
+
+    stroke-linecap: round;
+
+}
+
+
+/* HANDWRITING */
+
+.handwritten {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 24%;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            22px,
+            2.4vw,
+            38px
+        );
+
+    font-style: italic;
+
+    line-height: .9;
+
+    transform:
+        rotate(-8deg);
+
+    opacity: .6;
+
+}
+
+
+.art-caption {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 9%;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    line-height: 1.6;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.content-section {
+
+    min-height: 90vh;
+
+    padding:
+        110px
+        var(--padding);
+
+    display: grid;
+
+    grid-template-columns:
+        .9fr
+        1.1fr;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    border-top:
+        1px solid
+        rgba(0,0,0,.08);
+
+}
+
+
+.content-section.light {
+    background: var(--paper-light);
+}
+
+
+.content-section.beige {
+    background: var(--paper);
+}
+
+
+.section-text {
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.number {
+
+    margin-bottom: 35px;
+
+}
+
+
+.section-text h2,
+.case-heading h2,
+.contact h2 {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-weight: normal;
+
+    letter-spacing: -.055em;
+
+}
+
+
+.section-text h2 {
+
+    font-size:
+        clamp(
+            58px,
+            6vw,
+            100px
+        );
+
+    line-height: .88;
+
+}
+
+
+.description {
+
+    max-width: 420px;
+
+    margin-top: 35px;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats {
+
+    margin-top: 65px;
+
+    max-width: 570px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.stat {
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid
+        rgba(0,0,0,.2);
+
+    position: relative;
+
+}
+
+
+.stat::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+
+    left: 0;
+
+    width: 20px;
+
+    height: 2px;
+
+    background: var(--red);
+
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            31px,
+            3vw,
+            48px
+        );
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+
+}
+
+
+.stat span {
+
+    font-size: 7px;
+
+    font-weight: bold;
+
+    line-height: 1.5;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================
+   SECTION ART
+========================================= */
+
+.section-art {
+
+    position: relative;
+
+    height: 620px;
+
+}
+
+
+.big-symbol {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+
+}
+
+
+.background-lines {
+
+    fill: none;
+
+    stroke:
+        rgba(
+            24,
+            24,
+            22,
+            .23
+        );
+
+    stroke-width: 1;
+
+}
+
+
+.wine-lines {
+
+    stroke:
+        rgba(
+            116,
+            39,
+            46,
+            .4
+        );
+
+}
+
+
+/* BLACK C */
+
+.black-brush {
+
+    fill: none;
+
+    stroke: var(--black);
+
+    stroke-width: 48;
+
+    stroke-linecap: round;
+
+}
+
+
+.black-brush-extra {
+
+    fill: none;
+
+    stroke:
+        rgba(
+            24,
+            24,
+            22,
+            .35
+        );
+
+    stroke-width: 9;
+
+    stroke-linecap: round;
+
+}
+
+
+/* TRIANGLE */
+
+.big-triangle {
+
+    fill: var(--black);
+
+}
+
+
+.big-triangle-scratch {
+
+    fill: none;
+
+    stroke:
+        rgba(
+            233,
+            223,
+            207,
+            .25
+        );
+
+    stroke-width: 4;
+
+}
+
+
+.big-triangle-scratch.thin {
+    stroke-width: 1;
+}
+
+
+/* GROWTH SLASH */
+
+.growth-slash {
+
+    fill: none;
+
+    stroke: var(--red);
+
+    stroke-width: 58;
+
+    stroke-linecap: round;
+
+}
+
+
+.growth-slash-extra {
+
+    fill: none;
+
+    stroke:
+        rgba(
+            116,
+            39,
+            46,
+            .45
+        );
+
+    stroke-width: 9;
+
+    stroke-linecap: round;
+
+}
+
+
+.symbol-note {
+
+    position: absolute;
+
+    right: 3%;
+
+    bottom: 12%;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            21px,
+            2vw,
+            34px
+        );
+
+    font-style: italic;
+
+    line-height: .9;
+
+    opacity: .55;
+
+    transform:
+        rotate(-7deg);
+
+}
+
+
+/* =========================================
+   CASE SECTION
+========================================= */
+
+.cases {
+
+    padding:
+        120px
+        var(--padding);
+
+    background: var(--paper-light);
+
+}
+
+
+.case-heading {
+
+    margin-bottom: 70px;
+
+}
+
+
+.case-heading h2 {
+
+    margin-top: 30px;
+
+    font-size:
+        clamp(
+            60px,
+            6vw,
+            100px
+        );
+
+    line-height: .88;
+
+}
+
+
+.case-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+
+}
+
+
+.case-image {
+
+    aspect-ratio: 4 / 5;
+
+    padding: 22px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    color: var(--white);
+
+}
+
+
+.case-1 {
+
+    background:
+        linear-gradient(
+            145deg,
+            #191916,
+            #29251f
+        );
+
+}
+
+
+.case-2 {
+
+    background:
+        linear-gradient(
+            145deg,
+            #74272e,
+            #241d1c
+        );
+
+}
+
+
+.case-3 {
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c1b18,
+            #3a3731
+        );
+
+}
+
+
+.case-image span {
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+}
+
+
+.case-image h3 {
+
+    position: relative;
+
+    z-index: 5;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            24px,
+            2vw,
+            34px
+        );
+
+    font-weight: normal;
+
+    line-height: 1;
+
+}
+
+
+/* abstract shapes inside cards */
+
+.case-shape {
+
+    position: absolute;
+
+    opacity: .55;
+
+}
+
+
+.circle-shape {
+
+    width: 280px;
+
+    height: 280px;
+
+    border:
+        28px solid
+        var(--red);
+
+    border-right-color:
+        transparent;
+
+    border-radius: 50%;
+
+    right: -80px;
+
+    top: 70px;
+
+    transform:
+        rotate(-20deg);
+
+}
+
+
+.triangle-shape {
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        150px solid transparent;
+
+    border-right:
+        150px solid transparent;
+
+    border-bottom:
+        290px solid
+        rgba(0,0,0,.65);
+
+    right: -80px;
+
+    top: 80px;
+
+}
+
+
+.case-slash {
+
+    position: absolute;
+
+    width: 40px;
+
+    height: 400px;
+
+    background: var(--red);
+
+    right: 90px;
+
+    top: 30px;
+
+    transform:
+        rotate(20deg);
+
+    opacity: .7;
+
+}
+
+
+.case > p {
+
+    margin-top: 14px;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.4px;
+
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+
+    min-height: 90vh;
+
+    padding:
+        110px
+        var(--padding);
+
+    background: var(--black);
+
+    color: var(--white);
+
+    display: grid;
+
+    grid-template-columns:
+        .9fr
+        1.1fr;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+.contact-label {
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.contact h2 {
+
+    font-size:
+        clamp(
+            60px,
+            6vw,
+            100px
+        );
+
+    line-height: .88;
+
+}
+
+
+.contact-text > p:not(.contact-label) {
+
+    max-width: 430px;
+
+    margin-top: 35px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    opacity: .7;
+
+}
+
+
+.contact-button {
+
+    display: inline-flex;
+
+    margin-top: 35px;
+
+    background: var(--white);
+
+    color: var(--black);
+
+    padding:
+        17px
+        24px;
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.contact-button span {
+    margin-left: 25px;
+}
+
+
+.contact-art {
+
+    position: relative;
+
+    height: 600px;
+
+}
+
+
+.contact-art svg {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.contact-red-line {
+
+    fill: none;
+
+    stroke: var(--red);
+
+    stroke-width: 70;
+
+    stroke-linecap: round;
+
+}
+
+
+.contact-thin-line {
+
+    fill: none;
+
+    stroke:
+        rgba(
+            255,
+            255,
+            255,
+            .15
+        );
+
+    stroke-width: 2;
+
+}
+
+
+.contact-art p {
+
+    position: absolute;
+
+    right: 5%;
+
+    top: 28%;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    font-size:
+        clamp(
+            35px,
+            4vw,
+            65px
+        );
+
+    line-height: .85;
+
+    opacity: .35;
+
+    transform:
+        rotate(-8deg);
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    min-height: 110px;
+
+    padding:
+        25px
+        var(--padding);
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    background: var(--paper-light);
+
+}
+
+
+.footer-logo {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 35px;
+
+}
+
+
+footer > p {
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.footer-links {
+
+    justify-self: end;
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.footer-links a {
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.main-button,
+.top-button,
+.contact-button {
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+
+.main-button:hover,
+.top-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background: var(--red);
+
+}
+
+
+.contact-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background: var(--red);
+
+    color: var(--white);
+
+}
+
+
+.case-image {
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.case:hover .case-image {
+
+    transform:
+        translateY(-7px);
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .nav {
+        display: none;
+    }
+
+
+    .header {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+    }
+
+
+    .hero {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+    }
+
+
+    .content-section {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+
+    :root {
+        --padding: 22px;
+    }
+
+
+    /* HEADER */
+
+    .header {
+
+        height: 75px;
+
+        grid-template-columns:
+            1fr
+            auto;
+
+    }
+
+
+    .logo-text {
+        font-size: 31px;
+    }
+
+
+    .logo-symbol {
+
+        width: 43px;
+
+        height: 34px;
+
+    }
+
+
+    .top-button {
+
+        padding:
+            13px
+            16px;
+
+    }
+
+
+    .top-button span {
+        margin-left: 10px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: auto;
+
+        display: block;
+
+        padding:
+            70px
+            var(--padding)
+            40px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                60px,
+                18vw,
+                90px
+            );
+
+    }
+
+
+    .intro {
+
+        font-size: 13px;
+
+        max-width: 360px;
+
+    }
+
+
+    .hero-art {
+
+        height: 470px;
+
+        min-height: 0;
+
+        margin-top: 50px;
+
+    }
+
+
+    .hero-c {
+
+        width: 65%;
+
+        left: -3%;
+
+    }
+
+
+    .hero-triangle {
+
+        width: 48%;
+
+        left: 25%;
+
+    }
+
+
+    .hero-slash {
+
+        width: 28%;
+
+        right: -3%;
+
+    }
+
+
+    .handwritten {
+
+        font-size: 21px;
+
+    }
+
+
+    /* CONTENT */
+
+    .content-section {
+
+        min-height: auto;
+
+        display: block;
+
+        padding:
+            85px
+            var(--padding)
+            30px;
+
+    }
+
+
+    .section-text h2 {
+
+        font-size:
+            clamp(
+                52px,
+                16vw,
+                78px
+            );
+
+    }
+
+
+    .description {
+
+        font-size: 13px;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 12px;
+
+        margin-top: 50px;
+
+    }
+
+
+    .stat strong {
+
+        font-size:
+            clamp(
+                25px,
+                8vw,
+                36px
+            );
+
+    }
+
+
+    .section-art {
+
+        height: 440px;
+
+        margin-top: 30px;
+
+    }
+
+
+    /* CASES */
+
+    .cases {
+
+        padding:
+            85px
+            var(--padding);
+
+    }
+
+
+    .case-heading h2 {
+
+        font-size:
+            clamp(
+                54px,
+                16vw,
+                80px
+            );
+
+    }
+
+
+    .case-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .case-image {
+
+        aspect-ratio:
+            4 / 4.5;
+
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+
+        min-height: auto;
+
+        display: block;
+
+        padding:
+            85px
+            var(--padding)
+            30px;
+
+    }
+
+
+    .contact h2 {
+
+        font-size:
+            clamp(
+                54px,
+                16vw,
+                80px
+            );
+
+    }
+
+
+    .contact-art {
+
+        height: 430px;
+
+        margin-top: 30px;
+
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 20px;
+
+        padding:
+            35px
+            var(--padding);
+
+    }
+
+
+    .footer-links {
+        justify-self: start;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .hero-buttons {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .stat {
+
+        display: grid;
+
+        grid-template-columns:
+            110px
+            1fr;
+
+        align-items: center;
+
+    }
+
+
+    .hero-art {
+        height: 390px;
+    }
+
+
+    .section-art {
+        height: 370px;
+    }
+
+}
+
+/* =========================================
+   HANDMÅLAD / RITAD FINISH
+   ========================================= */
+
+.paint-c-main,
+.paint-c-extra,
+.slash-main,
+.slash-extra,
+.black-brush,
+.black-brush-extra,
+.big-triangle,
+.growth-slash,
+.growth-slash-extra,
+.contact-red-line {
+    filter: url(#roughBrush);
+}
+
+.hero-lines,
+.background-lines {
+    filter: url(#sketchFilter);
+}
+
+/* =========================================
+   ART — HANDRITAD / MÅLAD LOOK
+   ÄNDRAR BARA GRAFIKEN
+========================================= */
+
+/* Tunna skisslinjer bakom all grafik */
+.hero-lines,
+.background-lines {
+    fill: none;
+    stroke: rgba(25, 23, 20, 0.25);
+    stroke-width: 1.2;
+    filter: url(#sketchFilter);
+}
+
+
+/* HERO — STORT VINRÖTT MÅLAT C */
+.paint-c-main {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 54;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: url(#roughBrush);
+}
+
+.paint-c-extra {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 10;
+    stroke-linecap: round;
+    opacity: 0.55;
+    filter: url(#roughBrush);
+}
+
+.paint-c-scratch {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 3;
+    opacity: 0.38;
+    filter: url(#sketchFilter);
+}
+
+
+/* HERO — STOR SVART TRIANGEL */
+.triangle-main,
+.big-triangle {
+    fill: #171715;
+    stroke: #171715;
+    stroke-width: 7;
+    stroke-linejoin: round;
+    filter: url(#roughBrush);
+}
+
+
+/* Repor / blyertslinjer i triangeln */
+.triangle-line,
+.big-triangle-scratch {
+    fill: none;
+    stroke: rgba(233, 223, 207, 0.35);
+    stroke-width: 3;
+    stroke-linecap: round;
+    filter: url(#sketchFilter);
+}
+
+.triangle-line.thin,
+.big-triangle-scratch.thin {
+    stroke-width: 1.4;
+    opacity: 0.7;
+}
+
+
+/* HERO — VINRÖTT PENSELDRAG / */
+.slash-main {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 52;
+    stroke-linecap: round;
+    filter: url(#roughBrush);
+}
+
+.slash-extra {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 8;
+    stroke-linecap: round;
+    opacity: 0.55;
+    filter: url(#roughBrush);
+}
+
+
+/* 01 STRATEGI — STORT SVART HANDMÅLAT C */
+.black-brush {
+    fill: none;
+    stroke: #171715;
+    stroke-width: 58;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: url(#roughBrush);
+}
+
+.black-brush-extra {
+    fill: none;
+    stroke: #171715;
+    stroke-width: 9;
+    stroke-linecap: round;
+    opacity: 0.48;
+    filter: url(#roughBrush);
+}
+
+
+/* 02 KREATIVITET — RÅ SVART TRIANGEL */
+.big-triangle {
+    fill: #171715;
+    filter: url(#roughBrush);
+}
+
+
+/* 03 TILLVÄXT — STORT VINRÖTT PENSELDRAG */
+.growth-slash {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 68;
+    stroke-linecap: round;
+    filter: url(#roughBrush);
+}
+
+.growth-slash-extra {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 9;
+    stroke-linecap: round;
+    opacity: 0.48;
+    filter: url(#roughBrush);
+}
+
+
+/* Kontaktsektionens röda målade linje */
+.contact-red-line {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 72;
+    stroke-linecap: round;
+    filter: url(#roughBrush);
+}
+
+.contact-thin-line {
+    fill: none;
+    stroke: #74272e;
+    stroke-width: 3;
+    opacity: 0.42;
+    filter: url(#sketchFilter);
+}
+
+
+/* Lite mer organisk känsla på hela art-ytan */
+.hero-art svg,
+.section-art svg,
+.contact-art svg {
+    overflow: visible;
+}
+
+
+/* Handskrivna småtexter */
+.handwritten,
+.symbol-note,
+.contact-art p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+}
+/* ===== FINAL ART OVERRIDE — keeps the existing site/layout ===== */
+.hero-art, .section-art { isolation:isolate; }
+.hero-lines, .background-lines { opacity:.58; stroke-width:1.15; filter:url(#sketchFilter); }
+
+/* HERO: larger, rougher composition */
+.hero-c { width:68%; left:-7%; top:-2%; transform:rotate(-8deg) scale(1.04); }
+.paint-c-main { stroke-width:62; filter:url(#roughBrush); }
+.paint-c-extra { stroke-width:15; opacity:.72; filter:url(#roughBrush); transform:translate(7px,-4px); }
+.paint-c-scratch { stroke-width:3.5; opacity:.72; filter:url(#sketchFilter); }
+.hero-triangle { width:50%; left:26%; top:24%; transform:rotate(-1deg); filter:url(#roughBrush); }
+.triangle-main { filter:url(#roughBrush); }
+.triangle-line { opacity:.7; filter:url(#sketchFilter); }
+.hero-slash { width:31%; right:-3%; top:0; height:92%; transform:rotate(3deg); }
+.slash-main { stroke-width:58; filter:url(#roughBrush); }
+.slash-extra { stroke-width:13; opacity:.7; filter:url(#roughBrush); }
+.handwritten { right:2%; top:22%; opacity:.5; transform:rotate(-10deg); }
+
+/* 01 STRATEGI: charcoal C, oversized like the reference */
+#strategi .section-art { transform:scale(1.08) translateX(2%); }
+#strategi .black-brush { stroke-width:68; filter:url(#roughBrush); }
+#strategi .black-brush-extra { stroke-width:15; opacity:.6; filter:url(#roughBrush); }
+
+/* 02 KREATIVITET: imperfect charcoal triangle */
+#kreativitet .section-art { transform:scale(1.08) translateX(1%); }
+#kreativitet .big-triangle { filter:url(#roughBrush); transform-origin:center; transform:rotate(-2deg) scale(1.03); }
+#kreativitet .big-triangle-scratch { opacity:.7; filter:url(#sketchFilter); }
+
+/* 03 TILLVÄXT: broad burgundy dry-brush slash */
+.content-section:nth-of-type(4) .section-art { transform:scale(1.08); }
+.growth-slash { stroke-width:82; filter:url(#roughBrush); }
+.growth-slash-extra { stroke-width:16; opacity:.62; filter:url(#roughBrush); }
+
+/* More analogue construction marks without changing content */
+.hero-art::before, .section-art::before {
+  content:""; position:absolute; inset:8% 4%; z-index:-1; pointer-events:none; opacity:.24;
+  background:
+    linear-gradient(28deg, transparent 49.7%, rgba(24,24,22,.32) 49.9%, rgba(24,24,22,.32) 50.1%, transparent 50.3%),
+    linear-gradient(112deg, transparent 49.7%, rgba(116,39,46,.24) 49.9%, rgba(116,39,46,.24) 50.1%, transparent 50.3%);
+  transform:rotate(-4deg);
+}
+
+/* Cases + ending get the same hand-made language */
+.case-shape, .case-slash { filter:url(#roughBrush); }
+.case-image::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.12; background:repeating-linear-gradient(14deg,transparent 0 9px,rgba(255,255,255,.11) 10px,transparent 11px); }
+.contact-red-line { stroke-width:84; filter:url(#roughBrush); }
+.contact-thin-line { filter:url(#sketchFilter); opacity:.65; }
+
+/* =========================================
+   ART DIRECTION 2.0
+   ========================================= */
+
+/* Grundpapper */
+body {
+    background-color: #e7dcc9;
+}
+
+/* Pappersstruktur över hela hemsidan */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+
+    background:
+        repeating-radial-gradient(
+            circle at 20% 30%,
+            rgba(50, 35, 20, 0.025) 0px,
+            rgba(50, 35, 20, 0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            17deg,
+            rgba(255,255,255,0.018) 0px,
+            rgba(255,255,255,0.018) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+}
+
+/* Sektionerna ska kännas som samma fysiska papper */
+.content-section.light,
+.content-section.beige,
+.cases {
+    background-color: #e7dcc9;
+}
