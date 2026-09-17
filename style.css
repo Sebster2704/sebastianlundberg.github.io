@@ -2308,3 +2308,233 @@ body::before {
 .cases {
     background-color: #e7dcc9;
 }
+
+#case {
+    scroll-margin-top: 40px;
+}
+
+/* Finjustering av case-sektionen */
+
+#case {
+    scroll-margin-top: 20px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+#case .case-heading {
+    margin-bottom: 25px;
+}
+
+#case .case-image {
+    aspect-ratio: 4 / 4;
+    min-height: 0;
+}
+
+#case .case > p {
+    margin-top: 12px;
+}
+
+
+
+/* =========================================
+   ZENSUM CASE STUDY
+========================================= */
+
+.case-study {
+    background: var(--paper-light);
+}
+
+.case-study-hero {
+    min-height: calc(100vh - 90px);
+    padding: 80px var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.case-study-hero h1 {
+    max-width: 1000px;
+    margin-top: 35px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(65px, 8vw, 125px);
+    font-weight: normal;
+    letter-spacing: -.06em;
+    line-height: .86;
+}
+
+.case-study-hero h1 em {
+    color: var(--red);
+    font-weight: normal;
+}
+
+.case-intro {
+    max-width: 600px;
+    margin-top: 45px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* SECTIONS */
+
+.case-study-section {
+    padding: 100px var(--padding);
+    border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.case-number {
+    display: block;
+    margin-bottom: 35px;
+
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 2.3px;
+}
+
+.case-study-section h2 {
+    max-width: 900px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(45px, 5vw, 80px);
+    font-weight: normal;
+    letter-spacing: -.05em;
+    line-height: .95;
+}
+
+.case-study-section > p {
+    max-width: 600px;
+    margin-top: 35px;
+
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+/* FUNNEL */
+
+.case-funnel {
+    max-width: 1000px;
+    margin-top: 45px;
+    padding: 35px;
+
+    background: var(--black);
+    color: var(--white);
+
+    font-family: Georgia, serif;
+    font-size: clamp(18px, 2vw, 28px);
+}
+
+
+/* RESULT */
+
+.result-section {
+    background: var(--black);
+    color: var(--white);
+}
+
+.case-result {
+    margin-bottom: 15px;
+
+    color: var(--red);
+    font-family: Georgia, serif;
+    font-size: clamp(100px, 15vw, 220px);
+    line-height: .8;
+    letter-spacing: -.07em;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+    .case-study-hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .case-study-section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .case-funnel {
+        padding: 25px;
+        line-height: 1.5;
+    }
+}
+
+
+
+/* =========================================
+   HOME CONTACT FORM
+========================================= */
+
+.home-contact-form {
+    width: 100%;
+    max-width: 520px;
+    margin-top: 40px;
+}
+
+.home-form-group {
+    margin-bottom: 28px;
+}
+
+.home-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.home-form-group input,
+.home-form-group textarea {
+    width: 100%;
+    padding: 14px 0;
+
+    border: none;
+    border-bottom: 1px solid currentColor;
+    border-radius: 0;
+
+    background: transparent;
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+}
+
+.home-form-group textarea {
+    resize: vertical;
+}
+
+.home-form-group input:focus,
+.home-form-group textarea:focus {
+    border-bottom-color: var(--red);
+}
+
+.home-form-group input::placeholder,
+.home-form-group textarea::placeholder {
+    opacity: .45;
+}
+
+.home-contact-form .contact-button {
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Fix för kontaktknappen längst ner på case-sidorna */
+
+.case-end .main-button {
+    position: static;
+    display: inline-flex;
+    margin-top: 35px;
+}
+
+.case-end > p {
+    margin-bottom: 0;
+}

@@ -839,106 +839,119 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              CASE
         ========================================= -->
 
-        <section class="cases" id="case">
+        <!-- ========================================
+     CASE
+========================================= -->
+
+<section class="cases" id="case">
+
+    <div class="case-heading">
+
+        <p class="number">
+            04 / UTVALDA CASE
+        </p>
+
+        <h2>
+            Growth
+            <br>
+            i praktiken.
+        </h2>
+
+    </div>
 
 
-            <div class="case-heading">
-
-                <p class="number">
-                    04 / UTVALDA CASE
-                </p>
+    <div class="case-grid" id="case-grid">
 
 
-                <h2>
-                    Resultat
+        <!-- ========================================
+             CASE 01 / ZENSUM
+        ========================================= -->
+
+        <a href="zensum.html" class="case">
+
+            <div class="case-image case-1">
+
+                <span>01</span>
+
+                <h3>
+                    Zensum
                     <br>
-                    i verkligheten.
-                </h2>
+                    Privatlån.
+                </h3>
+
+                <!-- Din befintliga cirkel används som grafiskt element -->
+                <div class="case-shape circle-shape"></div>
 
             </div>
 
+            <p>
+                B2C / PRIVATLÅN / FUNNEL & CRO
+            </p>
 
-
-            <div class="case-grid">
-
-
-                <article class="case">
-
-                    <div class="case-image case-1">
-
-                        <span>01</span>
-
-                        <h3>
-                            Strategi för
-                            <br>
-                            tillväxt.
-                        </h3>
-
-                        <div class="case-shape circle-shape"></div>
-
-                    </div>
-
-
-                    <p>
-                        STRATEGI / POSITIONERING
-                    </p>
-
-                </article>
+        </a>
 
 
 
-                <article class="case">
+        <!-- ========================================
+             CASE 02 / ENKLARE
+        ========================================= -->
 
-                    <div class="case-image case-2">
+        <a href="enklare.html" class="case">
 
-                        <span>02</span>
+            <div class="case-image case-2">
 
-                        <h3>
-                            Kreativitet
-                            <br>
-                            som konverterar.
-                        </h3>
+                <span>02</span>
 
-                        <div class="case-shape triangle-shape"></div>
+                <h3>
+                    Enklare
+                    <br>
+                    Privatlån.
+                </h3>
 
-                    </div>
-
-
-                    <p>
-                        CREATIVE / SOCIAL
-                    </p>
-
-                </article>
-
-
-
-                <article class="case">
-
-                    <div class="case-image case-3">
-
-                        <span>03</span>
-
-                        <h3>
-                            Data som
-                            <br>
-                            driver beslut.
-                        </h3>
-
-                        <div class="case-slash"></div>
-
-                    </div>
-
-
-                    <p>
-                        ANALYTICS / GROWTH
-                    </p>
-
-                </article>
-
+                <!-- Din befintliga triangel används som grafiskt element -->
+                <div class="case-shape triangle-shape"></div>
 
             </div>
 
-        </section>
+            <p>
+                B2C / PRIVATLÅN / CONVERSION
+            </p>
+
+        </a>
+
+
+
+        <!-- ========================================
+             CASE 03 / BLIPP
+        ========================================= -->
+
+       <a href="blipp.html" class="case">
+
+            <div class="case-image case-3">
+
+                <span>03</span>
+
+                <h3>
+                    Blipp
+                    <br>
+                    Billån.
+                </h3>
+
+                <!-- Ditt befintliga snedstreck används som grafiskt element -->
+                <div class="case-slash"></div>
+
+            </div>
+
+            <p>
+                B2C / BILLÅN / CUSTOMER JOURNEY
+            </p>
+
+        </a>
+
+
+    </div>
+
+</section>
 
 
 
@@ -972,16 +985,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </p>
 
 
-                <a
-                    href="mailto:hello@example.com"
-                    class="contact-button"
-                >
+                <form class="home-contact-form">
 
-                    Kontakta mig
+    <div class="home-form-group">
+        <label for="home-name">NAMN</label>
+        <input
+            type="text"
+            id="home-name"
+            name="name"
+            placeholder="Ditt namn"
+            required
+        >
+    </div>
 
-                    <span>→</span>
+    <div class="home-form-group">
+        <label for="home-email">E-POST</label>
+        <input
+            type="email"
+            id="home-email"
+            name="email"
+            placeholder="din@email.se"
+            required
+        >
+    </div>
 
-                </a>
+    <div class="home-form-group">
+        <label for="home-message">MEDDELANDE</label>
+        <textarea
+            id="home-message"
+            name="message"
+            rows="4"
+            placeholder="Vad vill du prata om?"
+            required
+        ></textarea>
+    </div>
+
+    <button type="submit" class="contact-button">
+        Skicka meddelande <span>→</span>
+    </button>
+
+</form>
 
             </div>
 
