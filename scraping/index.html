@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TJPQP27H');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Scraping | Sebastian Lundberg</title>
+
+    <!-- Vi ligger en mapp djupare, därför ../ -->
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .scraping-page {
+            min-height: 100vh;
+            padding: 160px 8% 100px;
+            background: #f1ede4;
+        }
+
+        .scraping-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .scraping-label {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .scraping-page h1 {
+            font-size: clamp(55px, 8vw, 110px);
+            line-height: 0.9;
+            margin-bottom: 45px;
+        }
+
+        .scraping-page h1 em {
+            color: #7b1f2d;
+        }
+
+        .scraping-intro {
+            max-width: 720px;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 70px;
+        }
+
+        .scraping-box {
+            border-top: 2px solid #111;
+            padding: 35px 0;
+        }
+
+        .scraping-box h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .scraping-box p {
+            max-width: 720px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .scraping-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .scraping-button {
+            display: inline-block;
+            padding: 15px 24px;
+            border: 2px solid #111;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scraping-button:hover {
+            background: #111;
+            color: #f1ede4;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 50px;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TJPQP27H"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <main class="scraping-page">
+
+        <div class="scraping-container">
+
+            <a href="../index.html" class="back-link">
+                ← Tillbaka till portfolio
+            </a>
+
+            <p class="scraping-label">
+                GROWTH TOOLBOX / WEB SCRAPING
+            </p>
+
+            <h1>
+                Data från
+                <br>
+                <em>webben.</em>
+            </h1>
+
+            <p class="scraping-intro">
+                I detta projekt har jag byggt ett enkelt scraping-script
+                i Node.js. Scriptet hämtar offentlig information om
+                privatlån och långivare från Finera och omvandlar
+                informationen till strukturerad data.
+            </p>
+
+
+            <section class="scraping-box">
+
+                <h2>Vad samlas in?</h2>
+
+                <p>
+                    För varje långivare samlar scriptet in långivarens namn,
+                    nominell ränta, effektiv ränta, lånebelopp och löptid.
+                </p>
+
+                <p>
+                    Scriptet använder fetch för att hämta sidans HTML och
+                    Cheerio för att läsa och välja ut information från
+                    tabellens HTML-element.
+                </p>
+
+            </section>
+
+
+            <section class="scraping-box">
+
+                <h2>Resultat</h2>
+
+                <p>
+                    Vid körningen identifierade scriptet 22 långivare.
+                    Resultatet sparades i en textfil där varje långivare
+                    presenteras tillsammans med de datapunkter som
+                    extraherades från tabellen.
+                </p>
+
+            </section>
+
+
+            <section class="scraping-box">
+
+                <h2>Se filer</h2>
+
+                <p>
+                    Här går det att öppna både scriptet som användes
+                    och resultatet från scrapingen.
+                </p>
+
+                <div class="scraping-buttons">
+
+                    <a href="script.txt" class="scraping-button">
+                        Visa script
+                    </a>
+
+                    <a href="data.txt" class="scraping-button">
+                        Visa resultat
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+Långivare | Nominell ränta | Effektiv ränta | Belopp | Löptid
+Enklare | 4,50 till 22,00 % | 8,41 % | 5 000 till 800 000 kr | 1 till 20 år
+SBAB | 4,50 till 8,95 % | 6,49 % | 30 000 till 500 000 kr | 2 till 10 år
+Lån & Spar Bank | 4,95 till 12,00 % | 5,07 till 13,57 % | 50 000 till 600 000 kr | 2 till 15 år
+Lendo | 4,95 till 23,00 % | 6,17 % | 10 000 till 800 000 kr | 1 till 15 år
+Nordea | 4,95 till 12,95 % | 5,24 till 13,97 % | 10 000 till 500 000 kr | 1 till 12 år
+Zmarta | 4,95 till 22,00 % | 7,18 % | Upp till 800 000 kr | 1 till 15 år
+MedMera Bank | 5,20 till 16,95 % | 5,33 till 25,46 % | 15 000 till 600 000 kr | 2 till 12 år
+Marginalen Bank | 5,75 till 17,99 % | 5,94 till 20,49 % | 25 000 till 600 000 kr | 2 till 15 år
+Avida Finans | 5,90 till 19,79 % | 11,15 till 29,50 % | 10 000 till 350 000 kr | 1 till 15 år
+Svea Bank | 5,95 till 20,95 % | 9,64 % | 10 000 till 400 000 kr | 2 till 15 år
+Swedbank | 5,95 till 16,09 % | 8,15 % | 20 000 till 500 000 kr | 1 till 12 år
+Bank Norwegian | 5,99 till 18,99 % | 6,23 till 27,80 % | 10 000 till 600 000 kr | Upp till 15 år
+Nordax Bank | 5,99 till 18,99 % | 6,58 till 24,63 % | 15 000 till 600 000 kr | 1 till 15 år
+Resurs Bank | 5,99 till 15,65 % | Upp till 32,54 % | 10 000 till 400 000 kr | 2 till 15 år
+SEB | 6,20 till 13,65 % | 8,79 % | 20 000 till 350 000 kr | 2 till 10 år
+Ikano Bank | 6,22 till 18,87 % | 6,49 till 20,81 % | 10 000 till 500 000 kr | 2 till 15 år
+Santander Consumer Bank | 6,44 till 14,95 % | 6,63 till 16,02 % | 10 000 till 350 000 kr | 2 till 12 år
+Länsförsäkringar Bank | 6,50 till 13,95 % | 7,91 % | 30 000 till 400 000 kr | 1 till 15 år
+Morrow Bank | 6,50 till 18,25 % | 10,59 % | 10 000 till 500 000 kr | 1 till 20 år
+Danske Bank | 6,88 till 15,00 % | 7,62 till 16,65 % | 50 000 till 400 000 kr | 1 till 10 år
+Norion Bank | 7,00 till 17,90 % | 9,16 % | 20 000 till 500 000 kr | 2 till 18 år
+Handelsbanken | 7,45 % | 8,17 % | 30 000 till 150 000 kr | 1 till 10 år
