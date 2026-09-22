@@ -280,6 +280,40 @@
                 align-items: flex-start;
             }
         }
+
+        .fake-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.fake-field select,
+.fake-field input {
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+#calculate-button {
+    border: none;
+    border-radius: 100px;
+    padding: 15px 25px;
+    background: #7b1e2b;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+#calculate-button:hover {
+    background: #111;
+    transform: translateY(-2px);
+}
+
     </style>
 </head>
 
@@ -302,94 +336,135 @@
             ← Tillbaka till API-projekt
         </a>
 
+        <!-- HERO -->
         <section class="hero">
 
             <p class="label">
-                API MASHUP / PAPER PROTOTYPE
+                API MASHUP / TVÅ API:ER
             </p>
 
             <h1>
-                Investment
+                Rese
                 <br>
-                <em>Dashboard.</em>
+                <em>kollen.</em>
             </h1>
 
             <p>
-                Ett koncept för en finansiell tjänst som kombinerar
-                aktiedata och valutadata från två olika API:er.
-                Lösningen visar hur värdet på amerikanska aktier
-                skulle kunna presenteras i svenska kronor.
+                En webblösning som kombinerar väderdata från Open-Meteo
+                med valutadata från Frankfurter. Välj ett resmål och ange
+                en budget i destinationens lokala valuta för att se aktuellt
+                väder och vad budgeten motsvarar i svenska kronor.
             </p>
 
         </section>
 
 
-        <!-- PAPER PROTOTYPE -->
-
+        <!-- RESEKOLLEN -->
         <section class="prototype">
 
             <div class="prototype-header">
 
-                <h2>Investment Dashboard</h2>
+                <h2>Resekollen</h2>
 
                 <span class="prototype-badge">
-                    PAPER PROTOTYPE
+                    API MASHUP
                 </span>
 
             </div>
 
-            <div class="fake-field">
-                <span>AKTIE</span>
 
-                <div class="fake-input">
-                    Apple (AAPL) ▾
-                </div>
+            <!-- RESMÅL -->
+            <div class="fake-field">
+
+                <label for="destination">
+                    VÄLJ RESMÅL
+                </label>
+
+                <select id="destination" class="fake-input">
+                    <option value="new-york">New York, USA</option>
+                    <option value="london">London, Storbritannien</option>
+                    <option value="tokyo">Tokyo, Japan</option>
+                    <option value="paris">Paris, Frankrike</option>
+                </select>
+
             </div>
 
-            <div class="fake-field">
-                <span>ANTAL AKTIER</span>
 
-                <div class="fake-input">
-                    10
-                </div>
+            <!-- BUDGET -->
+            <div class="fake-field">
+
+                <label for="budget" id="budget-label">
+                    RESEBUDGET I USD
+                </label>
+
+                <input
+                    type="number"
+                    id="budget"
+                    class="fake-input"
+                    value="1000"
+                    min="1"
+                >
+
             </div>
 
+
+            <button id="calculate-button">
+                Hämta resedata →
+            </button>
+
+
+            <!-- API RESULTAT -->
             <div class="data-grid">
 
+                <!-- OPEN METEO -->
                 <div class="data-card">
 
-                    <small>AKTIEKURS / USD</small>
+                    <small>VÄDER JUST NU</small>
 
-                    <strong>$250</strong>
+                    <strong id="temperature">
+                        -- °C
+                    </strong>
 
-                    <p>
-                        Exempeldata från Alpha Vantage
+                    <p id="weather-city">
+                        Temperatur på valt resmål
                     </p>
 
                 </div>
 
+
+                <!-- FRANKFURTER -->
                 <div class="data-card">
 
-                    <small>VALUTAKURS / USD → SEK</small>
+                    <small id="currency-title">
+                        VALUTAKURS → SEK
+                    </small>
 
-                    <strong>9,40 SEK</strong>
+                    <strong id="exchange-rate">
+                        -- SEK
+                    </strong>
 
                     <p>
-                        Exempeldata från Frankfurter
+                        Aktuell valutakurs från Frankfurter
                     </p>
 
                 </div>
 
             </div>
 
+
+            <!-- RESULTAT -->
             <div class="result">
 
-                <small>BERÄKNAT VÄRDE I SEK</small>
+                <small>
+                    RESEBUDGET I SVENSKA KRONOR
+                </small>
 
-                <strong>23 500 kr</strong>
+                <strong id="total-value">
+                    -- kr
+                </strong>
 
-                <p>
-                    10 aktier × 250 USD × 9,40 SEK
+                <p id="calculation-text">
+                    Välj resmål och ange din budget.
                 </p>
 
             </div>
@@ -397,8 +472,7 @@
         </section>
 
 
-        <!-- TWO APIs -->
-
+        <!-- FÖRKLARING -->
         <section class="explanation">
 
             <p class="label">
@@ -411,40 +485,45 @@
                 mashupen?
             </h2>
 
+
             <div class="api-grid">
 
+                <!-- API 1 -->
                 <div class="api-card">
 
-                    <h3>API 1 — Alpha Vantage</h3>
+                    <h3>API 1 — Open-Meteo</h3>
 
                     <p>
-                        Alpha Vantage används i konceptet för att
-                        hämta finansiell marknadsdata, exempelvis
-                        priset på en amerikansk aktie.
+                        Open-Meteo används för att hämta aktuell
+                        temperatur för det resmål som användaren väljer.
+                        Resmålets koordinater skickas till API:et.
                     </p>
 
                     <strong>
-                        Data: aktiekurs i USD
+                        Data: aktuell temperatur
                     </strong>
 
                 </div>
+
 
                 <div class="plus">
                     +
                 </div>
 
+
+                <!-- API 2 -->
                 <div class="api-card">
 
                     <h3>API 2 — Frankfurter</h3>
 
                     <p>
-                        Frankfurter används för att hämta
-                        valutadata. Här används växelkursen
-                        mellan amerikanska dollar och svenska kronor.
+                        Frankfurter används för att hämta aktuell
+                        växelkurs mellan destinationens lokala valuta
+                        och svenska kronor.
                     </p>
 
                     <strong>
-                        Data: USD → SEK
+                        Data: lokal valuta → SEK
                     </strong>
 
                 </div>
@@ -452,6 +531,7 @@
             </div>
 
 
+            <!-- GEMENSAM LÖSNING -->
             <div class="solution">
 
                 <p class="label">
@@ -459,40 +539,47 @@
                 </p>
 
                 <h2>
-                    Från två datakällor
+                    Resedata från
                     <br>
-                    till ett resultat.
+                    två datakällor.
                 </h2>
 
                 <p>
-                    Alpha Vantage ger aktiekursen i USD medan
-                    Frankfurter ger valutakursen mellan USD och SEK.
+                    När användaren väljer ett resmål används Open-Meteo
+                    för att hämta aktuell temperatur och Frankfurter för
+                    att hämta destinationens valutakurs mot SEK.
                 </p>
 
                 <p>
-                    Genom att kombinera informationen kan tjänsten
-                    beräkna vad ett amerikanskt aktieinnehav
-                    motsvarar i svenska kronor.
+                    Informationen kombineras i Resekollen så att
+                    användaren på samma plats kan se både vädret på
+                    destinationen och vad en resebudget motsvarar i
+                    svenska kronor.
                 </p>
 
+
                 <p class="flow">
-                    ALPHA VANTAGE → AKTIEKURS I USD
+                    OPEN-METEO → VÄDER PÅ RESMÅLET
                     <br>
                     +
                     <br>
-                    FRANKFURTER → USD/SEK
+                    FRANKFURTER → LOKAL VALUTA / SEK
                     <br>
                     ↓
                     <br>
-                    VÄRDE PÅ AKTIEINNEHAVET I SEK
+                    RESEKOLLEN → VÄDER + BUDGET I SEK
                 </p>
 
+
                 <div class="note">
-                    <strong>Om prototypen:</strong>
-                    Siffrorna som visas ovan är exempeldata.
-                    Syftet med paper prototypen är att visualisera
-                    hur data från de två API:erna skulle kombineras
-                    i en färdig digital tjänst.
+
+                    <strong>Om mashupen:</strong>
+
+                    Informationen ovan hämtas från två separata API:er.
+                    Open-Meteo levererar väderdata och Frankfurter
+                    levererar valutadata. JavaScript kombinerar datan
+                    och presenterar resultatet i samma tjänst.
+
                 </div>
 
             </div>
@@ -500,6 +587,208 @@
         </section>
 
     </main>
+
+
+    <script>
+
+        // HTML-element
+        const button = document.getElementById("calculate-button");
+        const destinationSelect = document.getElementById("destination");
+        const budgetInput = document.getElementById("budget");
+
+
+        // Information om våra resmål
+        const destinations = {
+
+            "new-york": {
+                city: "New York",
+                latitude: 40.7128,
+                longitude: -74.0060,
+                currency: "USD"
+            },
+
+            "london": {
+                city: "London",
+                latitude: 51.5072,
+                longitude: -0.1276,
+                currency: "GBP"
+            },
+
+            "tokyo": {
+                city: "Tokyo",
+                latitude: 35.6762,
+                longitude: 139.6503,
+                currency: "JPY"
+            },
+
+            "paris": {
+                city: "Paris",
+                latitude: 48.8566,
+                longitude: 2.3522,
+                currency: "EUR"
+            }
+
+        };
+
+
+        // Ändra budgetens valuta när resmål ändras
+        destinationSelect.addEventListener("change", function () {
+
+            const destination =
+                destinations[destinationSelect.value];
+
+            document.getElementById("budget-label").textContent =
+                "RESEBUDGET I " + destination.currency;
+
+        });
+
+
+        // När användaren klickar på knappen
+        button.addEventListener("click", async function () {
+
+            try {
+
+                const destination =
+                    destinations[destinationSelect.value];
+
+                const city = destination.city;
+                const latitude = destination.latitude;
+                const longitude = destination.longitude;
+                const currency = destination.currency;
+
+                const budget = Number(budgetInput.value);
+
+
+                // Kontrollera budget
+                if (!budget || budget <= 0) {
+
+                    alert("Ange en resebudget större än 0.");
+
+                    return;
+                }
+
+
+                // Visa att data hämtas
+                button.textContent = "Hämtar data...";
+                button.disabled = true;
+
+
+                // =========================
+                // API 1: OPEN-METEO
+                // =========================
+
+                const weatherResponse = await fetch(
+                    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m`
+                );
+
+                if (!weatherResponse.ok) {
+                    throw new Error("Kunde inte hämta väderdata.");
+                }
+
+                const weatherData =
+                    await weatherResponse.json();
+
+                const temperature =
+                    weatherData.current.temperature_2m;
+
+
+                // =========================
+                // API 2: FRANKFURTER
+                // =========================
+
+                const currencyResponse = await fetch(
+                    `https://api.frankfurter.dev/v2/rate/${currency.toLowerCase()}/sek`
+                );
+
+                if (!currencyResponse.ok) {
+                    throw new Error("Kunde inte hämta valutadata.");
+                }
+
+                const currencyData =
+                    await currencyResponse.json();
+
+                const exchangeRate =
+                    Number(currencyData.rate);
+
+
+                // =========================
+                // MASHUP / BERÄKNING
+                // =========================
+
+                const totalSEK =
+                    budget * exchangeRate;
+
+
+                // =========================
+                // VISA RESULTAT
+                // =========================
+
+                document.getElementById("temperature").textContent =
+                    temperature.toFixed(1) + " °C";
+
+                document.getElementById("weather-city").textContent =
+                    "Aktuell temperatur i " + city;
+
+                document.getElementById("currency-title").textContent =
+                    currency + " → SEK";
+
+                document.getElementById("exchange-rate").textContent =
+                    exchangeRate.toFixed(4) + " SEK";
+
+                document.getElementById("total-value").textContent =
+                    totalSEK.toLocaleString("sv-SE", {
+                        maximumFractionDigits: 0
+                    }) + " kr";
+
+                document.getElementById("calculation-text").textContent =
+                    budget.toLocaleString("sv-SE") +
+                    " " +
+                    currency +
+                    " × " +
+                    exchangeRate.toFixed(4) +
+                    " = " +
+                    totalSEK.toLocaleString("sv-SE", {
+                        maximumFractionDigits: 0
+                    }) +
+                    " SEK";
+
+
+                // Visa data även i Console
+                console.log("Resmål:", city);
+                console.log("Temperatur:", temperature);
+                console.log(currency + "/SEK:", exchangeRate);
+                console.log("Budget:", budget, currency);
+                console.log("Budget i SEK:", totalSEK);
+
+
+                // Eget dataLayer-event
+                window.dataLayer = window.dataLayer || [];
+
+                window.dataLayer.push({
+                    event: "travel_mashup_calculated",
+                    destination: city,
+                    currency: currency
+                });
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                alert(
+                    "Något gick fel när API-datan hämtades. Försök igen."
+                );
+
+            } finally {
+
+                button.textContent = "Hämta resedata →";
+                button.disabled = false;
+
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>
