@@ -2538,3 +2538,137 @@ body::before {
 .case-end > p {
     margin-bottom: 0;
 }
+
+.dashboard-back {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-bottom: 30px;
+
+    background: #7b1e2b;
+    color: #fff;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 0 #4f111b;
+    transition: 0.2s ease;
+}
+
+.dashboard-back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #4f111b;
+}
+
+.dashboard-back:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #4f111b;
+}
+
+/* =========================
+   CONTENT PLAN
+========================= */
+
+.content-plan {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+}
+
+.content-plan > h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.95;
+    margin: 30px 0 60px;
+    max-width: 850px;
+}
+
+.content-plan section {
+    background: rgba(255, 255, 255, 0.35);
+    border: 2px solid #1a1a1a;
+    border-radius: 18px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 6px 6px 0 #1a1a1a;
+}
+
+.content-plan section:nth-of-type(even) {
+    transform: rotate(0.3deg);
+}
+
+.content-plan section:nth-of-type(odd) {
+    transform: rotate(-0.3deg);
+}
+
+.content-plan h2 {
+    color: #7b1e2b;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.content-plan p {
+    line-height: 1.7;
+    max-width: 800px;
+}
+
+.content-plan strong {
+    color: #7b1e2b;
+}
+
+.content-plan section:hover {
+    transform: translateY(-3px);
+    box-shadow: 9px 9px 0 #1a1a1a;
+    transition: 0.2s ease;
+}
+
+@media (max-width: 700px) {
+    .content-plan {
+        padding: 30px 16px 70px;
+    }
+
+    .content-plan > h1 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .content-plan section {
+        padding: 22px;
+        box-shadow: 4px 4px 0 #1a1a1a;
+    }
+}
+
+.content-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: -25px 0 50px;
+}
+
+.content-stat {
+    border: 2px solid #1a1a1a;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 5px 5px 0 #1a1a1a;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #7b1e2b;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+    .content-stats {
+        grid-template-columns: 1fr;
+    }
+}

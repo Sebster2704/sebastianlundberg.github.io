@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Svensk ekonomi i siffror</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <a href="index.html" class="dashboard-back">← Tillbaka</a>
+
+        <h1>Svensk ekonomi i siffror</h1>
+
+        <p>
+            Hur utvecklades inflationen och styrräntan i Sverige 2020–2025?
+        </p>
+
+        <p>
+    Diagrammen visar utvecklingen av inflationen (KPI, årsförändring)
+    och Riksbankens styrränta under perioden 2020–2025.
+    Båda måtten anges i procent.
+</p>
+
+        <section>
+            <h2>Inflation över tid</h2>
+            <canvas id="inflationChart"></canvas>
+        </section>
+
+        <section>
+            <h2>Styrränta över tid</h2>
+            <canvas id="interestChart"></canvas>
+        </section>
+
+<section class="dashboard-insight">
+    <h2>Vad visar datan?</h2>
+
+    <p>
+        Inflationen steg kraftigt under 2022 och nådde sin högsta nivå
+        i slutet av året. Under samma period började styrräntan höjas
+        från 0 procent och nådde senare 4 procent.
+    </p>
+
+    <p>
+        Därefter sjönk inflationen tydligt under 2023 och 2024.
+        Styrräntan låg kvar på en hög nivå en period innan den började
+        sänkas under 2024 och fortsatte ned under 2025.
+    </p>
+</section>
+
+<section class="dashboard-sources">
+    <h2>Källor</h2>
+
+  <p>
+    Inflation:
+    <a href="https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__PR__PR0101__PR0101A/KPI2020M/"
+       target="_blank">
+        Statistiska centralbyrån (SCB) – Konsumentprisindex (KPI)
+    </a>
+</p>
+
+<p>
+    Styrränta:
+    <a href="https://www.riksbank.se/sv/statistik/rantor-och-valutakurser/styrranta-in--och-utlaningsranta/"
+       target="_blank">
+        Sveriges Riksbank – Styrränta
+    </a>
+</p>
+
+<p>
+    Period: 2020–2025. Enhet: procent.
+</p>
+</section>
+
+
+
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const inflationLabels = [
+        "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06",
+        "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12",
+
+        "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06",
+        "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12",
+
+        "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06",
+        "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12",
+
+        "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06",
+        "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12",
+
+        "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06",
+        "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12",
+
+        "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06",
+        "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12"
+    ];
+
+    const inflationData = [
+        1.3, 1.0, 0.6, -0.4, 0.0, 0.7,
+        0.5, 0.8, 0.4, 0.3, 0.2, 0.5,
+
+        1.6, 1.4, 1.7, 2.2, 1.8, 1.3,
+        1.4, 2.1, 2.5, 2.8, 3.3, 3.9,
+
+        3.7, 4.3, 6.0, 6.4, 7.3, 8.7,
+        8.5, 9.8, 10.8, 10.9, 11.5, 12.3,
+
+        11.7, 12.0, 10.6, 10.5, 9.7, 9.3,
+        9.3, 7.5, 6.5, 6.5, 5.8, 5.4,
+
+        5.4, 4.5, 4.1, 3.9, 3.7, 2.6,
+        2.6, 1.9, 1.6, 1.6, 1.6, 0.8,
+
+        0.9, 1.3, 0.5, 0.3, 0.2, 0.7,
+        0.8, 1.1, 0.9, 0.9, 0.3, 0.3
+    ];
+
+    new Chart(document.getElementById("inflationChart"), {
+        type: "line",
+
+        data: {
+            labels: inflationLabels,
+
+            datasets: [{
+                label: "Inflation (KPI, årsförändring %)",
+                data: inflationData,
+                tension: 0.2
+            }]
+        },
+
+        options: {
+            responsive: true,
+
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: "Procent"
+                    }
+                },
+
+                x: {
+                    title: {
+                        display: true,
+                        text: "Månad"
+                    }
+                }
+            }
+        }
+    });
+const interestLabels = [
+    "2020-01-08",
+    "2022-05-04",
+    "2022-07-06",
+    "2022-09-21",
+    "2022-11-30",
+    "2023-02-15",
+    "2023-05-03",
+    "2023-07-05",
+    "2023-09-27",
+    "2024-05-15",
+    "2024-08-21",
+    "2024-10-02",
+    "2024-11-13",
+    "2025-01-08",
+    "2025-02-05",
+    "2025-06-25",
+    "2025-10-01"
+];
+
+const interestData = [
+    0.00,
+    0.25,
+    0.75,
+    1.75,
+    2.50,
+    3.00,
+    3.50,
+    3.75,
+    4.00,
+    3.75,
+    3.50,
+    3.25,
+    2.75,
+    2.50,
+    2.25,
+    2.00,
+    1.75
+];
+
+new Chart(document.getElementById("interestChart"), {
+    type: "line",
+
+    data: {
+        labels: interestLabels,
+
+        datasets: [{
+            label: "Styrränta (%)",
+            data: interestData,
+            stepped: true
+        }]
+    },
+
+    options: {
+        responsive: true,
+
+        scales: {
+            y: {
+                title: {
+                    display: true,
+                    text: "Procent"
+                }
+            },
+
+            x: {
+                title: {
+                    display: true,
+                    text: "Datum för ränteförändring"
+                }
+            }
+        }
+    }
+});
+
+</script>
+
+</body>
+</html>
